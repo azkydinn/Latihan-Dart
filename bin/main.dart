@@ -1,12 +1,13 @@
+import 'package:Dart/flying_monster.dart';
 import 'package:Dart/hero.dart';
 import 'package:Dart/monster.dart';
 import 'package:Dart/monster_kecoa.dart';
 import 'package:Dart/monster_ubur_ubur.dart';
+import 'package:Dart/monster_ucoa.dart';
 
 
 void main(List<String> arguments) {
   Hero h = Hero();
-  Monster m = Monster();
   Monster um = MonsterUburUbur();
   MonsterKecoa mk = MonsterKecoa();
   MonsterUburUbur mu = MonsterUburUbur();
@@ -14,13 +15,19 @@ void main(List<String> arguments) {
   List <Monster> monsters = [];
   monsters.add(MonsterUburUbur());
   monsters.add(MonsterKecoa());
-  monsters.add(MonsterUburUbur());
+  monsters.add(MonsterUcoa());
 
 //  print ((um as MonsterUburUbur).swim());
 
+//  for (Monster m in monsters){
+//    if (m is MonsterUburUbur){
+//      print(m.swim());
+//    }
+//  }
+
   for (Monster m in monsters){
-    if (m is MonsterUburUbur){
-      print(m.swim());
+    if(m is FlyingMonster){
+      print((m as FlyingMonster).fly());
     }
   }
 

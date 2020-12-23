@@ -1,6 +1,8 @@
 import 'package:Dart/character.dart';
 
-class Monster extends Character {
+abstract class Monster extends Character {
+  //dibuat abstract agar tidak dapat di
   String eatHuman() => "Grr.. Delicious.. Yummy..";
 
+  String move();
 }
